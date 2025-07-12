@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>수시 지원 현황 모집</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>수시 지원 현황</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>학생 수시 지원 현황 📝</h1>
+            <p>학생들의 수시 지원 정보를 입력하고 관리하세요.</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>지원 정보 입력</h2>
+                <form id="application-form">
+                    <div class="form-group">
+                        <label for="application-type">전형 구분</label>
+                        <select id="application-type" required>
+                            <option value="학종">학생부종합(학종)</option>
+                            <option value="교과">학생부교과(교과)</option>
+                            <option value="논술">논술</option>
+                            <option value="기타">기타</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="application-name">전형 이름</label>
+                        <input type="text" id="application-name" placeholder="예: 네오르네상스 전형" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="university">지원 학교</label>
+                        <input type="text" id="university" placeholder="예: 한국대학교" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="major">지원 학과</label>
+                        <input type="text" id="major" placeholder="예: 컴퓨터공학과" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="schedule">주요 일정 (원서 마감일 등)</label>
+                        <input type="date" id="schedule" required>
+                    </div>
+                    <div class="form-group form-group-full">
+                        <label for="changes">전형 주요 변경 사항</label>
+                        <textarea id="changes" rows="4" placeholder="예: 수능 최저 학력 기준 폐지, 면접 비중 확대 등"></textarea>
+                    </div>
+                    <div class="form-group-full">
+                        <button type="submit">추가하기</button>
+                    </div>
+                </form>
+            </section>
+
+            <section class="status-section">
+                <h2>지원 현황 목록</h2>
+                <div class="table-wrapper">
+                    <table id="application-table">
+                        <thead>
+                            <tr>
+                                <th>전형 구분</th>
+                                <th>전형 이름</th>
+                                <th>지원 학교</th>
+                                <th>지원 학과</th>
+                                <th>일정</th>
+                                <th>주요 변경 사항</th>
+                                <th>관리</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>&copy; 2025 수시 지원 현황</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>

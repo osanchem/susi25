@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+:root {
+    --primary-color: #4a90e2;
+    --border-color: #ddd;
+    --background-color: #f4f7f6;
+    --text-color: #333;
+    --white-color: #fff;
+    --danger-color: #e74c3c;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+header h1 {
+    font-size: 2em;
+    color: var(--primary-color);
+    margin: 0;
+}
+
+header p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+h2 {
+    font-size: 1.5em;
+    color: var(--text-color);
+    margin-top: 0;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+}
+
+.input-section {
+    margin-bottom: 40px;
+}
+
+#application-form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group-full {
+    grid-column: 1 / -1;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Noto Sans KR', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #357abd;
+}
+
+.status-section {
+    display: none; /* 기본적으로 목록 숨기기 */
+}
+
+.status-section.visible {
+    display: block; /* 이 클래스가 추가되면 목록 보이기 */
+}
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* 테이블이 길어질 경우 수평 스크롤 생성 */
+}
+
+#application-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    white-space: nowrap; /* 셀 내용이 줄바꿈되지 않도록 설정 */
+}
+
+#application-table th, #application-table td {
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#application-table th {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    position: sticky;
+    top: 0;
+}
+
+#application-table td:nth-child(6) { /* 주요 변경 사항 열 */
+    white-space: normal; /* 긴 텍스트의 경우 줄바꿈 허용 */
+    text-align: left;
+    min-width: 250px; /* 최소 너비 지정 */
+}
+
+#application-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+#application-table tbody tr:hover {
+    background-color: #e9ecef;
+}
+
+.delete-btn {
+    background-color: var(--danger-color);
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+    color: #888;
+}
