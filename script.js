@@ -1,28 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 관리자 인증 ---
-    const ADMIN_PASSWORD = 'admin'; // 🚨 원하는 비밀번호로 변경하세요.
+    // --- 요소 선택 ---
+    const adminViewBtn = document.getElementById('admin-view-btn');
+    const adminViewSection = document.getElementById('admin-view-section');
     const statusSection = document.querySelector('.status-section');
-
-    function authenticateAdmin() {
-        const password = prompt('관리자 비밀번호를 입력하세요:');
-        if (password === "1234" ) {
-            statusSection.classList.add('visible');
-            alert('인증되었습니다. 관리자 모드로 접속합니다.');
-        } else if (password !== null && password !== "") {
-            alert('비밀번호가 틀렸습니다. 현황 목록을 볼 수 없습니다.');
-        } else {
-            alert('비밀번호를 입력하지 않았습니다. 현황 목록을 볼 수 없습니다.');
-        }
-    }
-    
-    // 페이지 로드 시 인증 함수 실행
-    authenticateAdmin();
-
-
-    // --- 기존 기능 (폼 처리) ---
     const form = document.getElementById('application-form');
     const tableBody = document.querySelector('#application-table tbody');
 
+    // --- 관리자 인증 ---
+    const ADMIN_PASSWORD = 'admin'; // 🚨 원하는 비밀번호로 변경하세요.
+
+    adminViewBtn.addEventListener('click', () => {
+        const password = prompt('관리자 비밀번호를 입력하세요:');
+        if (password === ADMIN_PASSWORD) {
+            statusSection.classList.add('visible');
+            adminViewSection.style.display = 'none'; // 버튼 영역 숨기기
+            alert('인증되었습니다. 관리자 모드로 접속합니다.');
+        } else if (password !== null && password !== "") {
+            alert('비밀번호가 틀렸습니다.');
+        }
+    });
+    
+    // --- 폼 제출 이벤트 처리 ---
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -40,8 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         addApplicationRow(applicationType, applicationName, university, major, schedule, changes);
         
-        // 입력 완료 알림
-        alert('"' + university + ' ' + major + '" 지원 정보가 추가되었습니다.');
+        alert(`'${university} ${major}' 지원 정보가 추가되었습니다.`);
 
         form.reset();
     });

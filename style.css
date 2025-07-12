@@ -7,6 +7,7 @@
     --text-color: #333;
     --white-color: #fff;
     --danger-color: #e74c3c;
+    --secondary-color: #f39c12;
 }
 
 body {
@@ -116,6 +117,33 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
     background-color: #357abd;
+}
+
+/* 관리자 보기 버튼 스타일 */
+#admin-view-section {
+    padding: 20px 0;
+    text-align: center;
+    border-top: 1px dashed var(--border-color);
+    border-bottom: 1px dashed var(--border-color);
+    margin-bottom: 40px;
+}
+
+#admin-view-btn {
+    background-color: var(--secondary-color);
+    color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#admin-view-btn:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .status-section {
